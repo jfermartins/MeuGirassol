@@ -64,14 +64,10 @@ meu-girassol-android/
 
 O projeto é gratuito e independente, distribuído atualmente de forma direta via APK para facilitar o acesso imediato sem barreiras:
 
-### Opção 1: Instalar via APK (Distribuição Direta / Google Drive ou Releases)
-1. Baixe o arquivo `.apk` através do link compartilhado ou da aba **Releases** do repositório.
-2. No dispositivo Android, autorize a instalação de fontes desconhecidas (caso solicitado pelo sistema) e conclua a instalação.
+### Download e Instalação (Android)
 
-### Opção 2: Compilar pelo Android Studio
-1. Clone este repositório e abra a pasta `meu-girassol-android` no **Android Studio**.
-2. Aguarde a sincronização do **Gradle**.
-3. Execute o projeto em um emulador ou dispositivo físico (`Run 'app'`).
+Baixe o instalador oficial diretamente na aba de Releases do projeto:
+* **[Baixar Meu Girassol v1.0.0 (APK)](https://github.com/jfermartins/MeuGirassol/releases/tag/MeuGirassol-v1.0.0-vers%C3%A3o-inicial)**
 
 ## 🗺️ Próximos Passos (Roadmap v2)
 
