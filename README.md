@@ -67,7 +67,7 @@ O projeto é gratuito e independente, distribuído atualmente de forma direta vi
 ### Download e Instalação (Android)
 
 Baixe o instalador oficial diretamente na aba de Releases do projeto:
-* **[Baixar Meu Girassol v1.0.0 (APK)](https://github.com/jfermartins/MeuGirassol/releases/tag/MeuGirassol-v1.0.0-vers%C3%A3o-inicial)**
+* **[Baixar Meu Girassol v1.3.0 (APK)](https://github.com/jfermartins/MeuGirassol/releases/tag/MeuGirassol-v1.0.0-vers%C3%A3o-inicial)**
 
 ## 🗺️ Próximos Passos (Roadmap v2)
 
