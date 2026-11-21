@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sunflower">#E5A92E</color>
+    <color name="forest">#3F5948</color>
+    <color name="ink">#27352E</color>
+    <color name="paper">#FBFAF6</color>
+    <color name="muted">#777D75</color>
+    <color name="white">#FFFFFF</color>
+    <color name="line">#E8E5DC</color>
+    <color name="cream">#FFFDF2</color>
+    <color name="pale_green">#EEF5E4</color>
+</resources>

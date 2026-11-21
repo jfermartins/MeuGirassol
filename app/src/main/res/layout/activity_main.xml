@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/paper"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="18dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="18dp"
+        android:paddingBottom="28dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/brand_circle"
+                android:gravity="center"
+                android:text="✿"
+                android:textColor="@color/forest"
+                android:textSize="25sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="meu girassol"
+                android:textColor="@color/forest"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/editorSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="UM ESPAÇO SEU, NO SEU TEMPO"
+                android:textColor="@color/forest"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="Monte seu crachá de apoio."
+                android:textColor="@color/ink"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="14dp"
+                android:text="Escolha uma foto, preencha o que desejar e marque quais informações aparecerão no crachá e no QR Code."
+                android:textColor="@color/muted"
+                android:textSize="14sp"
+                android:lineSpacingExtra="3dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/card_background"
+                android:elevation="2dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1. ESCOLHA O TEMA DO CRACHÁ"
+                    android:textColor="@color/forest"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Toque em uma opção. O CID não define o tema automaticamente."
+                    android:textColor="@color/muted"
+                    android:textSize="12sp" />
+                <RadioGroup
+                    android:id="@+id/identityGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:orientation="vertical">
+                    <RadioButton
+                        android:id="@+id/identityAutism"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/identity_choice_background"
+                        android:buttonTint="@color/identity_choice_indicator"
+                        android:minHeight="60dp"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:text="🧩  AUTISMO — QUEBRA-CABEÇA"
+                        android:textColor="@color/identity_choice_text"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+                    <RadioButton
+                        android:id="@+id/identitySunflower"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/identity_choice_background"
+                        android:buttonTint="@color/identity_choice_indicator"
+                        android:minHeight="60dp"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:text="🌻  OUTRA DEFICIÊNCIA OCULTA — GIRASSOL"
+                        android:textColor="@color/identity_choice_text"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background"
+                android:elevation="2dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="FOTO DO CRACHÁ"
+                    android:textColor="@color/forest"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="A foto fica neste aparelho e não é incluída no QR Code."
+                    android:textColor="@color/muted"
+                    android:textSize="12sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/photoThumbnail"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/photo_placeholder"
+                        android:contentDescription="Foto escolhida para o crachá"
+                        android:scaleType="centerCrop" />
+                    <Button
+                        android:id="@+id/choosePhotoButton"
+                        style="@style/SecondaryButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Escolher foto" />
+                </LinearLayout>
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="Nome ou nome social" android:textColor="@color/ink" android:textStyle="bold" android:textSize="14sp" />
+                <EditText android:id="@+id/nameInput" style="@style/ProfileInput" android:hint="Como gostaria de ser chamado(a)?" android:inputType="textCapWords|textPersonName" />
+                <CheckBox android:id="@+id/namePublic" style="@style/PublicCheckbox" android:checked="true" android:text="Incluir nome no crachá e no QR" />
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="CID" android:textColor="@color/ink" android:textStyle="bold" android:textSize="14sp" />
+                <EditText android:id="@+id/cidInput" style="@style/ProfileInput" android:hint="Se desejar, informe o CID" android:inputType="textCapCharacters" />
+                <CheckBox android:id="@+id/cidPublic" style="@style/PublicCheckbox" android:text="Incluir CID no crachá e no QR" />
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Alergias" android:textColor="@color/ink" android:textStyle="bold" android:textSize="14sp" />
+                <EditText android:id="@+id/allergiesInput" style="@style/ProfileInput" android:hint="Alergias ou reações importantes" android:inputType="textCapSentences|textMultiLine" android:minLines="2" android:gravity="top|start" />
+                <CheckBox android:id="@+id/allergiesPublic" style="@style/PublicCheckbox" android:text="Incluir alergias no crachá e no QR" />
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Outras informações relevantes" android:textColor="@color/ink" android:textStyle="bold" android:textSize="14sp" />
+                <EditText android:id="@+id/relevantInput" style="@style/ProfileInput" android:hint="Informações que podem ajudar" android:inputType="textCapSentences|textMultiLine" android:minLines="2" android:gravity="top|start" />
+                <CheckBox android:id="@+id/relevantPublic" style="@style/PublicCheckbox" android:text="Incluir no crachá e no QR" />
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="O que pode me ajudar" android:textColor="@color/ink" android:textStyle="bold" android:textSize="14sp" />
+                <EditText android:id="@+id/supportInput" style="@style/ProfileInput" android:hint="Como oferecer apoio" android:inputType="textCapSentences|textMultiLine" android:minLines="2" android:gravity="top|start" />
+                <CheckBox android:id="@+id/supportPublic" style="@style/PublicCheckbox" android:text="Incluir no crachá e no QR" />
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Contato de confiança" android:textColor="@color/ink" android:textStyle="bold" android:textSize="14sp" />
+                <EditText android:id="@+id/contactInput" style="@style/ProfileInput" android:hint="Nome e telefone, se desejar" android:inputType="textCapSentences|textMultiLine" android:minLines="2" android:gravity="top|start" />
+                <CheckBox android:id="@+id/contactPublic" style="@style/PublicCheckbox" android:text="Incluir contato no crachá e no QR" />
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Orientações importantes" android:textColor="@color/ink" android:textStyle="bold" android:textSize="14sp" />
+                <EditText android:id="@+id/instructionsInput" style="@style/ProfileInput" android:hint="O que gostaria que soubessem" android:inputType="textCapSentences|textMultiLine" android:minLines="2" android:gravity="top|start" />
+                <CheckBox android:id="@+id/instructionsPublic" style="@style/PublicCheckbox" android:text="Incluir no crachá e no QR" />
+
+                <CheckBox android:id="@+id/identityPublic" style="@style/PublicCheckbox" android:text="Incluir a categoria dentro do QR Code" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="INFORMAÇÕES PERSONALIZADAS"
+                    android:textColor="@color/forest"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Adicione campos do seu jeito, como comunicação ou sensibilidades."
+                    android:textColor="@color/muted"
+                    android:textSize="12sp" />
+                <LinearLayout
+                    android:id="@+id/customFieldsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+                <Button
+                    android:id="@+id/addCustomButton"
+                    style="@style/SecondaryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+ Adicionar campo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/card_background"
+                android:elevation="2dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="PRIVACIDADE E QR OFFLINE" android:textColor="@color/forest" android:textSize="12sp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="O QR contém os campos públicos selecionados — não um link de internet. Qualquer pessoa que escanear poderá ler esses dados; eles não são criptografados. A foto fica somente neste aparelho. CID e alergias começam privados." android:textColor="@color/muted" android:textSize="12sp" android:lineSpacingExtra="2dp" />
+                <CheckBox
+                    android:id="@+id/consentCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Entendo que os campos escolhidos ficam dentro do QR e podem ser lidos por qualquer pessoa que o escanear. Não são criptografados; a foto não vai no QR."
+                    android:textColor="@color/ink"
+                    android:textSize="12sp" />
+                <Button
+                    android:id="@+id/createQrButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/forest"
+                    android:text="Criar crachá e QR offline"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/statusText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center"
+                    android:textColor="@color/forest"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:id="@+id/badgePreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/badge_frame"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    android:visibility="gone">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/badge_header"
+                        android:gravity="center_vertical"
+                        android:minHeight="47dp"
+                        android:orientation="horizontal"
+                        android:paddingStart="8dp"
+                        android:paddingTop="5dp"
+                        android:paddingEnd="8dp"
+                        android:paddingBottom="5dp">
+                        <TextView
+                            android:id="@+id/badgeIcon"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/brand_circle"
+                            android:gravity="center"
+                            android:text="✿"
+                            android:textColor="@color/forest"
+                            android:textSize="23sp" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="CARTÃO DE IDENTIFICAÇÃO" android:textColor="@color/white" android:textSize="13sp" android:textStyle="bold" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="PESSOA COM DEFICIÊNCIA OCULTA" android:textColor="@color/white" android:textSize="10sp" android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="34dp"
+                        android:layout_marginEnd="34dp"
+                        android:background="@drawable/badge_ribbon"
+                        android:gravity="center"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp"
+                        android:id="@+id/badgeRibbon" android:text="CORDÃO DE GIRASSOL"
+                        android:textColor="@color/forest"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/cream"
+                        android:gravity="center_vertical"
+                        android:minHeight="142dp"
+                        android:orientation="horizontal"
+                        android:padding="6dp">
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="128dp"
+                            android:layout_weight="1.05"
+                            android:background="@drawable/photo_frame"
+                            android:padding="3dp">
+                            <ImageView
+                                android:id="@+id/badgePhoto"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="Foto da pessoa no crachá"
+                                android:scaleType="centerCrop" />
+                            <TextView
+                                android:id="@+id/badgePhotoPlaceholder"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/pale_green"
+                                android:gravity="center"
+                                android:text="FOTO\nDO CRACHÁ"
+                                android:textColor="@color/forest"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+                        <LinearLayout
+                            android:id="@+id/badgeDetailsContainer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1.7"
+                            android:orientation="vertical" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.05"
+                            android:background="@drawable/badge_qr_frame"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="4dp">
+                            <ImageView
+                                android:id="@+id/qrImage"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:contentDescription="QR Code do perfil de apoio"
+                                android:scaleType="fitCenter" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="ACESSE MEU PERFIL"
+                                android:textColor="@color/forest"
+                                android:textSize="8sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:background="@drawable/badge_header"
+                                android:gravity="center"
+                                android:padding="3dp"
+                                android:text="APONTE A CÂMERA"
+                                android:textColor="@color/white"
+                                android:textSize="7sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/badge_footer"
+                        android:orientation="vertical"
+                        android:paddingStart="10dp"
+                        android:paddingTop="6dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="6dp">
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Respeite minhas limitações." android:textColor="@color/white" android:textSize="12sp" android:textStyle="bold" />
+                        <TextView android:id="@+id/badgeFooterText" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Meu cordão de girassol sinaliza uma deficiência não aparente. INCLUSÃO É RESPEITO!" android:textColor="@color/white" android:textSize="8sp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="A foto é impressa no crachá, mas não é enviada pelo QR. Revise os campos públicos antes de compartilhar."
+                    android:textColor="@color/muted"
+                    android:textSize="11sp" />
+                <Button
+                    android:id="@+id/saveBadgeButton"
+                    style="@style/PrimaryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Salvar crachá como PNG"
+                    android:visibility="gone" />
+                <Button
+                    android:id="@+id/shareLinkButton"
+                    style="@style/SecondaryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Compartilhar código para abrir no app"
+                    android:visibility="gone" />
+                <Button
+                    android:id="@+id/deleteButton"
+                    style="@style/SecondaryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Apagar dados deste dispositivo" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/publicProfileSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="26dp" android:text="PERFIL DE APOIO" android:textColor="@color/forest" android:textSize="12sp" android:textStyle="bold" />
+            <TextView android:id="@+id/publicName" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:textColor="@color/ink" android:textSize="28sp" android:textStyle="bold" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:layout_marginBottom="16dp" android:text="Informações que a pessoa escolheu compartilhar para facilitar o acolhimento e o apoio." android:textColor="@color/muted" android:textSize="14sp" />
+            <LinearLayout android:id="@+id/publicFieldsContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/card_background" android:elevation="2dp" android:orientation="vertical" android:padding="16dp" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:background="@drawable/card_background" android:padding="16dp" android:text="Se possível, pergunte diretamente à pessoa como gostaria de ser apoiada. Cada pessoa é única." android:textColor="@color/forest" android:textSize="13sp" />
+            <Button android:id="@+id/backToEditButton" style="@style/SecondaryButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Voltar ao meu perfil" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:text="Informação com respeito, apoio com cuidado."
+            android:textColor="@color/muted"
+            android:textSize="11sp" />
+    </LinearLayout>
+</ScrollView>
