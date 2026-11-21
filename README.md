@@ -1,41 +1,84 @@
-# Meu Girassol — Android nativo (Java + XML)
+# 🌻🧩 Meu Girassol — Crachá Digital para Pessoas com Deficiências Ocultas
 
-Aplicativo Android offline, desenvolvido em Java e XML para abrir no Android Studio. Permite editar o perfil no próprio aparelho, montar um crachá com foto e QR, e escolher entre o tema Autismo/quebra-cabeça ou outra deficiência oculta/girassol. O logotipo de girassol enviado foi integrado ao ícone do aplicativo, com recursos para diferentes densidades e ícone adaptável. **Esta versão não usa serviço online, servidor ou permissão de internet.**
+Aplicativo Android nativo desenvolvido para oferecer autonomia, segurança e acessibilidade a pessoas com deficiências não aparentes (como Autismo e outras condições ocultas). O app permite criar, personalizar e exibir um crachá de identificação digital com controle total sobre quais dados ficam privados no aparelho e quais são compartilhados via QR Code.
 
-## Abrir e executar
+## 💡 A História por Trás do Projeto
 
-1. Instale Android Studio, Android SDK (API 35 ou superior recomendado) e JDK 17.
-2. Extraia o ZIP do projeto.
-3. No Android Studio, escolha **Open** e selecione a pasta `meu-girassol-android`, onde está `settings.gradle`.
-4. Aguarde a sincronização do Gradle e a instalação dos componentes Android solicitados.
-5. Escolha um emulador ou aparelho e pressione **Run**.
+O **Meu Girassol** nasceu de uma vivência real. Como usuária do cordão de girassol, passei por uma crise em que não conseguia falar — e, ao procurar ferramentas que me ajudassem a comunicar rapidamente o que eu precisava naquele momento, não encontrei nenhuma solução que atendesse a essa necessidade de forma prática e segura.
 
-Para gerar um APK de depuração: **Build > Build Bundle(s) / APK(s) > Build APK(s)**. O arquivo normalmente fica em `app/build/outputs/apk/debug/app-debug.apk`.
+Percebendo que essa mesma barreira afeta milhares de outras pessoas com deficiências ocultas, uni minha experiência pessoal à minha atuação como **Engenheira de Software e Desenvolvedora** para projetar e construir do zero uma solução original, acessível, offline e centrada na privacidade do usuário.
 
-## Como funciona o QR offline
+## 🎯 Problema & Solução
 
-O QR guarda, dentro do próprio código, os campos marcados para compartilhamento. O conteúdo é codificado para caber no QR, **mas não é criptografado**: qualquer pessoa que escanear o crachá pode ler essas informações. A foto não é incluída no QR; ela fica no aparelho e é impressa na imagem do crachá. O conteúdo do QR tem um limite de tamanho; se os textos forem longos demais, o app solicitará que reduza os dados.
+Em situações de sobrecarga sensorial, crise ou dificuldade de comunicação verbal, pessoas com deficiências ocultas precisam transmitir informações essenciais (como alergias, necessidades de apoio, orientações de manejo e contatos de confiança) de forma imediata, sem abrir mão da sua privacidade no dia a dia.
 
-Para abrir e exibir os dados do QR, o telefone que escanear precisa ter o Meu Girassol instalado. Ao ler o código com a câmera, o Android deve oferecer a abertura do link `meugirassol://perfil` no app. Sem o app instalado, esse link offline não abrirá uma página web — não há servidor ou site nesta versão.
+O **Meu Girassol** resolve isso combinando **armazenamento 100% local**, **privacidade granular (*opt-in*)** e **geração de QR Code otimizado** para leitura instantânea.
 
-Os dados do QR são uma cópia do perfil feita no momento em que o código foi criado. Se a pessoa editar o perfil, precisa gerar e imprimir/compartilhar um novo QR; códigos antigos que já foram distribuídos continuam mostrando os dados anteriores.
+## ✨ Funcionalidades Principais
 
-## Funcionalidades
+* **Identificação Temática por Escolha Explícita:**
+  * **🧩 Quebra-Cabeças (Autismo):** Exibe a simbologia do autismo com a mensagem *"Respeite meu tempo e minhas formas de comunicação"*.
+  * **🌻 Cordão de Girassol (Outras Deficiências Ocultas):** Exibe a simbologia do girassol com a mensagem *"Meu cordão de girassol sinaliza uma deficiência não aparente. INCLUSÃO É RESPEITO!"*.
+  * *Sem inferência automática:* O sistema nunca deduz a categoria pelo CID; a exibição na tela ou no QR depende exclusivamente da autorização do usuário.
 
-- Perfil editável localmente: nome/nome social, CID, alergias, informações relevantes, necessidades de apoio, contato de confiança, orientações e campos personalizados.
-- Ícone Meu Girassol na tela inicial do aparelho, baseado no logotipo fornecido; versão Android 1.3.0 (`versionCode 4`).
-- Tema escolhido pela pessoa: Autismo (quebra-cabeça) ou Outra deficiência oculta (girassol). O app não tenta deduzir o tema pelo CID.
-- Seleção individual das informações incluídas no crachá e no QR. Nome começa selecionado; CID e alergias começam privados. A categoria só entra no QR se a pessoa marcar a opção correspondente.
-- Foto local escolhida pelo seletor de arquivos Android.
-- QR Code criado sem conexão de internet nem armazenamento online.
-- Prévia do crachá com foto, dados selecionados, tema escolhido e QR; opção para salvar a imagem PNG e imprimir.
-- Apagar perfil, foto e QR armazenados neste aparelho.
+* **Controle Granular de Privacidade (Toggles Individuais):**
+  * Chaves individuais para ativar ou ocultar cada bloco de informação: **Nome ou Nome Social**, **CID**, **Alergias** (exibidas em tags de destaque), **Necessidades de Apoio**, **Orientações de Crise**, **Contatos de Confiança** e **Tipo Sanguíneo**.
+  * Painel de resumo transparente mostrando exatamente quais campos estão **visíveis no QR Code** e quais permanecem **ocultos apenas no dispositivo**.
 
-## Privacidade e observações
+* **Exportação, Impressão e Pré-visualização:**
+  * Geração e download direto da imagem do **QR Code** e do **Crachá completo** pronto para impressão.
+  * Modo de pré-visualização (*"Ver como fica para quem escaneia"*) para validar os dados antes de compartilhar.
 
-Revise os campos marcados antes de gerar o QR. Evite incluir dados que não queira revelar a qualquer pessoa que escanear uma cópia do código. O QR não tem senha nem criptografia. Apagar os dados deste aparelho não apaga códigos anteriormente salvos, impressos ou enviados.
+## 🏗️ Arquitetura e Decisões de Engenharia
 
-Se você já criou um perfil usando uma versão anterior com hospedagem online, esta versão offline não acessa nem remove aquele perfil remoto. Perfis online antigos, se houver, precisam ser tratados separadamente no serviço onde foram criados.
+* **Arquitetura Local-First & Privacy by Design:** Nenhum dado sensível é enviado a servidores externos. Todo o estado do perfil e as preferências de visibilidade residem localmente no dispositivo Android, garantindo funcionamento **100% offline** em momentos de crise.
+* **Payload Compacto em Base64 (UTF-8):** Apenas os campos marcados explicitamente como públicos são serializados e codificados em Base64, preservando acentuação em português sem sobrecarga de processamento.
+* **Otimização de Densidade do QR Code:** Limitação estratégica de caracteres nos campos de texto livre (como necessidades de apoio e orientações) para manter a matriz do QR Code limpa, garantindo leitura rápida até mesmo em câmeras de dispositivos mais antigos ou com brilho reduzido.
+* **UI Acessível e de Baixa Carga Cognitiva:** Paleta de cores suaves de alto contraste, tipografia legível e componentes nativos desenhados para leitura rápida sob estresse.
 
-O crachá é uma ferramenta de comunicação e identificação; ele não substitui documentos, laudos ou atendimento de emergência.
-# MeuGirassol
+## 🛠️ Stack Tecnológica
+
+* **Plataforma:** Android Nativo
+* **Linguagem:** Java (Android SDK)
+* **Interface & Design System:** XML nativo com `drawables` vetoriais e *shapes* customizados (`badge_frame`, `photo_frame`, `badge_qr_frame`, faixas temáticas e tags de alerta)
+* **Build & Automação:** Gradle / Gradle Wrapper
+
+## 📂 Estrutura do Projeto
+
+```text
+meu-girassol-android/
+├── app/src/main/
+│   ├── java/com/meugirassol/app/
+│   │   └── MainActivity.java          # Regras de negócio, toggles de privacidade, Base64 e geração do QR Code
+│   ├── res/
+│   │   ├── drawable/                  # Molduras, badges, faixas temáticas e componentes visuais
+│   │   ├── layout/activity_main.xml   # Estrutura da interface e cartões de controle
+│   │   └── values/                    # Paleta acessível, estilos e strings
+│   └── AndroidManifest.xml
+├── netlify-site/                      # Base estrutural da visualização web (planejada para a v2)
+├── plan.md                            # Documentação de arquitetura e planejamento
+└── TODO.md                            # Backlog técnico e evolução
+```
+
+## 📲 Instalação e Distribuição
+
+O projeto é gratuito e independente, distribuído atualmente de forma direta via APK para facilitar o acesso imediato sem barreiras:
+
+### Opção 1: Instalar via APK (Distribuição Direta / Google Drive ou Releases)
+1. Baixe o arquivo `.apk` através do link compartilhado ou da aba **Releases** do repositório.
+2. No dispositivo Android, autorize a instalação de fontes desconhecidas (caso solicitado pelo sistema) e conclua a instalação.
+
+### Opção 2: Compilar pelo Android Studio
+1. Clone este repositório e abra a pasta `meu-girassol-android` no **Android Studio**.
+2. Aguarde a sincronização do **Gradle**.
+3. Execute o projeto em um emulador ou dispositivo físico (`Run 'app'`).
+
+## 🗺️ Próximos Passos (Roadmap v2)
+
+* **Visualização Web Pública (Netlify):** Ativar o redirecionamento do QR Code para uma página HTTPS leve e responsiva, permitindo que terceiros (socorristas, atendentes ou equipe de transporte) leiam o perfil autorizado diretamente no navegador, sem precisar instalar nenhum aplicativo.
+
+## 👩‍💻 Engenharia e Desenvolvimento
+
+Projeto idealizado a partir de uma necessidade real e conduzido de ponta a ponta por **Jane Fernanda Martins** — *Engenheira de Software & Desenvolvedora*.
+
+* **Escopo conduzido:** Idealização do produto, levantamento de requisitos reais de acessibilidade, prototipação de UX/UI, arquitetura de privacidade *local-first*, desenvolvimento nativo em Java/XML, otimização de payload Base64/QR Code e bateria de testes funcionais e de leitura com usuários reais.
